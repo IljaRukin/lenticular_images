@@ -1,18 +1,15 @@
 close all;clear;clc;
-addpath("./ocean_images");
+addpath("./cube");
 
 dpi = 720;
 lpi = 75;
 pixels_space = 9.56;
 
-sample_im = imread('ocean001.jpg') ;
-size_sample = size(sample_im);
+%sample_im = imread('1.jpg');
+%im_size = size(sample_im);
+im_size = [300,400];
 samples = ceil( pixels_space );
-
-dim = [size_sample(1)*samples,size_sample(2)*samples];
-%m=4;
-%dim = [dpi*m,dpi*m];
-%dim = [4725,6300]; %phone
+dim = [im_size(1)*samples,im_size(2)*samples];
 
 image = zeros([dim,3],'uint8');
 indices = round( 1:pixels_space:dim(2) );
@@ -20,7 +17,7 @@ indices = round( 1:pixels_space:dim(2) );
 %combine image
 image_array = zeros([dim,3],'uint8');
 for nr=1:samples
-    image_array = imresize( imread(['ocean00',int2str(nr),'.jpg']) , dim );
+    image_array = imresize( imread(['',int2str(nr),'.jpg']) , dim );
     %image_array(:,:,:,nr) = imresize( imread(['pacman',int2str(floor(nr/2)),'.jpg']) , dim );
     
     while (max(indices)+nr-1)>dim(2)
