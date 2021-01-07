@@ -4,11 +4,13 @@ addpath("./cube");
 dpi = 720;
 lpi = 75;
 pixels_space = 9.56;
-
-%sample_im = imread('1.jpg');
-%im_size = size(sample_im);
-im_size = [300,400];
 samples = ceil( pixels_space );
+fprintf("number of images: %i \n",samples);
+
+sample_im = imread('1.jpg');
+im_size = size(sample_im);
+im_size = floor(im_size(1:2)/2);
+fprintf("image res: %i x %i \n",im_size);
 dim = [im_size(1)*samples,im_size(2)*samples];
 
 image = zeros([dim,3],'uint8');
