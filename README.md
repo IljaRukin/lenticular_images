@@ -11,3 +11,7 @@ Have fun.
 
 here is a short demonstration: \
 [<img src="https://img.youtube.com/vi/ul23OZaDYW0/maxresdefault.jpg" width="20%">](https://youtu.be/ul23OZaDYW0)
+
+here are images of the calibration pattern and the calculated image: \
+<img src="calibration.tiff">
+<img src="lenticular.tiff">
